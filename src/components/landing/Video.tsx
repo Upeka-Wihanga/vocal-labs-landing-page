@@ -1,7 +1,7 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useRef, useContext } from 'react';
-import { VideoContext } from "/src/contexts/VideoContext";
+import { VideoContext } from '../../contexts/VideoContext'; // Correct the import path
 
 const VideoSection = styled.section`
     padding: 100px 5%;
@@ -44,19 +44,8 @@ const Subtitle = styled(motion.p)`
 `;
 
 const Video = () => {
-    const { isPlaying, setIsPlaying } = useContext(VideoContext);
+    useContext(VideoContext);
     const videoRef = useRef<HTMLVideoElement>(null);
-
-    const handlePlayPause = () => {
-        if (videoRef.current) {
-            if (isPlaying) {
-                videoRef.current.pause();
-            } else {
-                videoRef.current.play();
-            }
-            setIsPlaying(!isPlaying);
-        }
-    };
 
     return (
         <VideoSection id="video-section">
