@@ -72,8 +72,8 @@ const Video = () => {
                         ref={videoRef}
                         width="100%"
                         height="500"
-                        src="https://drive.google.com/file/d/19iF7OYrbpdN2tKoKCF8n8cKtmJBTg8Qc/preview"
-                        title="Google Drive video player"
+                        src="https://www.youtube.com/embed/Cb9PhwEq2Cg"
+                        title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
