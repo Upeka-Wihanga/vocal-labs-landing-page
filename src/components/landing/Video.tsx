@@ -9,6 +9,7 @@ const VideoSection = styled.section`
             to bottom,
             rgba(15, 23, 42, 0.95),
             rgba(2, 6, 23, 0.95)
+            
     );
     position: relative;
     z-index: 1;
