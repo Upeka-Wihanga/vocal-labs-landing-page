@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { useRef, useContext } from 'react';
+import { useRef, useContext, useEffect } from 'react';
 import { VideoContext } from '../../contexts/VideoContext'; // Correct the import path
 
 const VideoSection = styled.section`
@@ -44,8 +44,17 @@ const Subtitle = styled(motion.p)`
 `;
 
 const Video = () => {
-    useContext(VideoContext);
+    const { autoPlay, setAutoPlay } = useContext(VideoContext);
     const videoRef = useRef<HTMLIFrameElement>(null);
+
+    useEffect(() => {
+        if (autoPlay && videoRef.current) {
+            const iframe = videoRef.current;
+            const src = iframe.src;
+            iframe.src = src + "?autoplay=1";
+            setAutoPlay(false);
+        }
+    }, [autoPlay, setAutoPlay]);
 
     return (
         <VideoSection id="video-section">

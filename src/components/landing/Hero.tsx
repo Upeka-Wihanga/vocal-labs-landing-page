@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { useContext } from 'react';
+import { VideoContext } from '../../contexts/VideoContext';
 
 const HeroSection = styled.section`
     min-height: 100vh;
@@ -162,7 +164,10 @@ const StyledImage = styled(motion.img)`
 `;
 
 const Hero = () => {
+    const { setAutoPlay } = useContext(VideoContext);
+
     const handleWatchDemoClick = () => {
+        setAutoPlay(true);
         const videoSection = document.getElementById('video-section');
         if (videoSection) {
             videoSection.scrollIntoView({ behavior: 'smooth' });
