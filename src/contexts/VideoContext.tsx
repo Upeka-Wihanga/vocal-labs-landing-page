@@ -21,5 +21,5 @@ export const VideoProvider = ({ children }: VideoProviderProps) => {
         <VideoContext.Provider value={{ isPlaying, setIsPlaying }}>
             {children}
         </VideoContext.Provider>
-    );
+    );
 };
