@@ -60,7 +60,7 @@ const Video = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <video ref={videoRef} width="100%" controls>
-                        <source src="path_to_your_video.mp4" type="video/mp4" />
+                        <source src="https://youtu.be/bVdOxQSsI2E?si=I2kIOaxeCwdwGKcn" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </motion.div>
