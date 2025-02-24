@@ -10,6 +10,8 @@ import Stats from './components/landing/Stats';
 import Newsletter from './components/landing/Newsletter';
 import CallToAction from './components/landing/CallToAction';
 import Footer from './components/layout/Footer';
+import Video from './components/landing/Video';
+import { VideoProvider } from './contexts/VideoContext';
 
 const AppWrapper = styled.div`
     display: flex;
@@ -27,19 +29,22 @@ const MainContent = styled.main`
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <AppWrapper>
-                <Navbar />
-                <MainContent>
-                    <Hero />
-                    <Features />
-                    <HowItWorks />
-                    <Stats />
-                    <Newsletter />
-                    <CallToAction />
-                </MainContent>
-                <Footer />
-            </AppWrapper>
+            <VideoProvider>
+                <GlobalStyles />
+                <AppWrapper>
+                    <Navbar />
+                    <MainContent>
+                        <Hero />
+                        <Features />
+                        <Video />
+                        <HowItWorks />
+                        <Stats />
+                        <Newsletter />
+                        <CallToAction />
+                    </MainContent>
+                    <Footer />
+                </AppWrapper>
+            </VideoProvider>
         </ThemeProvider>
     );
 }

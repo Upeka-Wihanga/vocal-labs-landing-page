@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-
 const HeroSection = styled.section`
     min-height: 100vh;
     position: relative;
@@ -163,6 +162,13 @@ const StyledImage = styled(motion.img)`
 `;
 
 const Hero = () => {
+    const handleWatchDemoClick = () => {
+        const videoSection = document.getElementById('video-section');
+        if (videoSection) {
+            videoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <HeroSection>
             <HeroContent>
@@ -186,6 +192,7 @@ const Hero = () => {
                             <WatchDemoButton
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
+                                onClick={handleWatchDemoClick}
                             >
                                 Watch Demo
                             </WatchDemoButton>
