@@ -8,7 +8,7 @@ const VideoSection = styled.section`
     background: linear-gradient(
             to bottom,
             rgba(15, 23, 42, 0.95),
-            rgba(2, 6, 23, 0.95)       
+            rgba(2, 6, 23, 0.95)
     );
     position: relative;
     z-index: 1;
@@ -45,7 +45,7 @@ const Subtitle = styled(motion.p)`
 
 const Video = () => {
     useContext(VideoContext);
-    const videoRef = useRef<HTMLVideoElement>(null);
+    const videoRef = useRef<HTMLIFrameElement>(null);
 
     return (
         <VideoSection id="video-section">
@@ -59,10 +59,16 @@ const Video = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <video ref={videoRef} width="100%" controls>
-                        <source src="https://youtu.be/bVdOxQSsI2E?si=I2kIOaxeCwdwGKcn" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+                    <iframe
+                        ref={videoRef}
+                        width="100%"
+                        height="500"
+                        src="https://www.youtube.com/embed/bVdOxQSsI2E"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
                 </motion.div>
             </Container>
         </VideoSection>
