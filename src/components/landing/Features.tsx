@@ -29,7 +29,7 @@ const Title = styled(motion.h2)`
     margin-bottom: 1.5rem;
 
     @media (max-width: 768px) {
-    
+
         font-size: 2.5rem;
     }
 `;
@@ -129,6 +129,7 @@ const Features = () => {
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: {
+            
             opacity: 1,
             y: 0
         }
