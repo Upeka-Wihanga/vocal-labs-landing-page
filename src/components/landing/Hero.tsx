@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import { VideoContext } from '../../contexts/VideoContext';
 
+
 const HeroSection = styled.section`
     min-height: 100vh;
     position: relative;
