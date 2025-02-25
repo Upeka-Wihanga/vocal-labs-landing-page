@@ -13,6 +13,7 @@ const HeroSection = styled.section`
             to bottom right,
             rgba(2, 6, 23, 0.95),
             rgba(15, 23, 42, 0.95)
+            
     );
     overflow: hidden;
     padding-bottom: 50px; /* Add padding to the bottom to avoid overlap */
