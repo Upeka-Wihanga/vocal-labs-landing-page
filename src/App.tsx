@@ -12,6 +12,12 @@ import CallToAction from './components/landing/CallToAction';
 import Footer from './components/layout/Footer';
 import Video from './components/landing/Video';
 import { VideoProvider } from './contexts/VideoContext';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Prices from './pages/Prices';
+import About from './pages/About';
+import Services from './pages/Services';
+import FAQ from './pages/FAQ';
 
 const AppWrapper = styled.div`
     display: flex;
@@ -32,16 +38,18 @@ function App() {
             <VideoProvider>
                 <GlobalStyles />
                 <AppWrapper>
-                    <Navbar />
-                    <MainContent>
-                        <Hero />
-                        <Features />
-                        <Video />
-                        <HowItWorks />
-                        <Stats />
-                        <Newsletter />
-                        <CallToAction />
-                    </MainContent>
+                    <Router>
+                        <Navbar />
+                        <MainContent>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/prices" element={<Prices />} />
+                                <Route path="/about" element={<About />} />
+                                <Route path="/services" element={<Services />} />
+                                <Route path="/faq" element={<FAQ />} />
+                            </Routes>
+                        </MainContent>
+                    </Router>
                     <Footer />
                 </AppWrapper>
             </VideoProvider>

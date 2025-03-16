@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Nav = styled.nav<{ isVisible: boolean }>`
   display: flex;
@@ -193,11 +194,11 @@ const Navbar = () => {
         {isOpen ? <FaTimes /> : <FaBars />}
       </HamburgerMenu>
       <NavLinks isOpen={isOpen}>
-        <NavItem>Home</NavItem>
-        <NavItem>About</NavItem>
-        <NavItem>Services</NavItem>
-        <NavItem>Prices</NavItem>
-        <NavItem>FAQ</NavItem>
+        <NavItem><Link to="/">Home</Link></NavItem>
+        <NavItem><Link to="/about">About</Link></NavItem>
+        <NavItem><Link to="/services">Services</Link></NavItem>
+        <NavItem><Link to="/prices">Prices</Link></NavItem>
+        <NavItem><Link to="/faq">FAQ</Link></NavItem>
       </NavLinks>
       <Button>Sign Up</Button>
       <AnimatePresence>
