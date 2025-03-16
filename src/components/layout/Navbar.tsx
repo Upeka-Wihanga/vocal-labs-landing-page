@@ -121,7 +121,7 @@ const MobileMenu = styled(motion.div)`
   }
 `;
 
-const MobileNavLink = styled(motion.a)`
+const MobileNavLink = styled(Link)`
   display: block;
   color: #e2e8f0;
   text-decoration: none;
@@ -151,13 +151,8 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
+  const handleLinkClick = () => {
     setIsOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   const controlNavbar = () => {
@@ -209,16 +204,11 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
           >
-            {['Home', 'About', 'Services', 'Prices', 'FAQ'].map((item) => (
-              <MobileNavLink
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={(e) => handleLinkClick(e, item.toLowerCase())}
-                whileHover={{ x: 5 }}
-              >
-                {item}
-              </MobileNavLink>
-            ))}
+            <MobileNavLink to="/" onClick={handleLinkClick}>Home</MobileNavLink>
+            <MobileNavLink to="/about" onClick={handleLinkClick}>About</MobileNavLink>
+            <MobileNavLink to="/services" onClick={handleLinkClick}>Services</MobileNavLink>
+            <MobileNavLink to="/prices" onClick={handleLinkClick}>Prices</MobileNavLink>
+            <MobileNavLink to="/faq" onClick={handleLinkClick}>FAQ</MobileNavLink>
           </MobileMenu>
         )}
       </AnimatePresence>
