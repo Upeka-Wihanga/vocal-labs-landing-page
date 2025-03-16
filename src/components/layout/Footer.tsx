@@ -1,6 +1,7 @@
 // Footer.tsx
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const FooterWrapper = styled.footer`
     background: ${({ theme }) => theme.colors.backgroundDark};
@@ -129,14 +130,14 @@ const Footer = () => {
                             Transform your public speaking with AI-powered analysis and real-time feedback. Join thousands of speakers who have already improved their communication skills.
                         </BrandDescription>
                         <SocialLinks>
-                            <SocialIcon href="https://twitter.com" target="_blank" whileHover={{ scale: 1.1 }}>
-                                𝕏
+                            <SocialIcon href="https://x.com/vocalLabsLK" target="_blank" whileHover={{ scale: 1.1 }}>
+                                <FaTwitter />
                             </SocialIcon>
-                            <SocialIcon href="https://linkedin.com" target="_blank" whileHover={{ scale: 1.1 }}>
-                                in
+                            <SocialIcon href="https://www.linkedin.com/company/vocallabslk/" target="_blank" whileHover={{ scale: 1.1 }}>
+                                <FaLinkedin />
                             </SocialIcon>
-                            <SocialIcon href="https://github.com" target="_blank" whileHover={{ scale: 1.1 }}>
-                                gh
+                            <SocialIcon href="https://www.instagram.com/vocal.labs/" target="_blank" whileHover={{ scale: 1.1 }}>
+                                <FaInstagram />
                             </SocialIcon>
                         </SocialLinks>
                     </BrandSection>
