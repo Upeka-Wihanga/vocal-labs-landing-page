@@ -1,9 +1,34 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
+// Define keyframes for the animation
+const moveRoadMap = keyframes`
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+`;
+
 const Section = styled.section`
+  position: relative; /* Add relative positioning */
   padding: 100px 5%;
   background: ${({ theme }) => theme.colors.background}; /* Change to a white background color */
+  overflow: hidden; /* Ensure the background effect doesn't overflow */
+`;
+
+const BackgroundEffect = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,rgb(255, 255, 255) 25%, transparent 25%, transparent 50%, #e0e0e0 50%, #e0e0e0 75%, transparent 75%, transparent); /* Create a road map pattern */
+  background-size: 50px 50px; /* Adjust the size of the pattern */
+  animation: ${moveRoadMap} 10s linear infinite; /* Apply the animation */
+  opacity: 0.1; /* Adjust opacity to make it subtle */
+  z-index: -1; /* Ensure it is behind other content */
 `;
 
 const SectionTitle = styled.h2`
@@ -89,6 +114,7 @@ const HowItWorks = () => {
 
     return (
         <Section>
+            <BackgroundEffect /> {/* Add the background effect */}
             <SectionTitle>How It Works</SectionTitle>
             <StepsContainer>
                 {steps.map((step, index) => (

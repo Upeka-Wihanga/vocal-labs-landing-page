@@ -11,6 +11,9 @@ import Prices from './pages/Prices';
 import About from './pages/About';
 import Services from './pages/Services';
 import FAQ from './pages/FAQ';
+import Partners from './pages/Partners';
+import Roadmap from './pages/Roadmap';
+import KeyFeatures from './pages/KeyFeatures';
 
 const AppWrapper = styled.div`
     display: flex;
@@ -40,6 +43,9 @@ function App() {
                                 <Route path="/about" element={<About />} />
                                 <Route path="/services" element={<Services />} />
                                 <Route path="/faq" element={<FAQ />} />
+                                <Route path="/partners" element={<Partners />} />
+                                <Route path="/roadmap" element={<Roadmap />} />
+                                <Route path="/features" element={<KeyFeatures />} />
                             </Routes>
                         </MainContent>
                     </Router>

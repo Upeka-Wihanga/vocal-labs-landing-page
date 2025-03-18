@@ -1,29 +1,58 @@
 //import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const AboutContainer = styled.div`
-  padding: 2rem;
+  padding: 4rem 2rem;
   text-align: center;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, rgb(89, 134, 179) 0%, #e9f2f9 100%);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #007bff,rgb(144, 96, 221));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: ${fadeIn} 1s ease-out;
 `;
 
 const Content = styled.div`
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
-  color: #555;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: ${fadeIn} 1.5s ease-out;
 `;
 
 const Paragraph = styled.p`
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #007bff,rgb(236, 232, 241));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 `;
 
 const About = () => {
