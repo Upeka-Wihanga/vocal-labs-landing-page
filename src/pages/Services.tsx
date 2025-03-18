@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 // Define types for props
@@ -42,17 +42,17 @@ const gradientMove = keyframes`
   }
 `;
 
-const pulse = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-`;
+// const pulse = keyframes`
+//   0% {
+//     transform: scale(1);
+//   }
+//   50% {
+//     transform: scale(1.05);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// `;
 
 const ServicesContainer = styled.div`
   padding: 5rem 2rem;
